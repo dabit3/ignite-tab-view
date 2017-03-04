@@ -3,17 +3,15 @@
 
 const ReactNativeTabView = 'react-native-tab-view'
 const EXAMPLE_FILE = 'TabViewExample.js'
-const PLUGIN_PATH = __dirname
-const APP_PATH = process.cwd()
 
 const add = async function (context) {
-  const { ignite, filesystem } = context
+  const { ignite } = context
 
   // install a npm module and link it
   await ignite.addModule(ReactNativeTabView)
 
   // copy the component example file (if examples are turned on)
-  await ignite.addComponentExample(EXAMPLE_FILE, { title: 'TabView Example' })
+  await ignite.addPluginComponentExample(EXAMPLE_FILE, { title: 'TabView Example' })
 
   // Example of copying templates/TabView to App/TabView
   // if (!filesystem.exists(`${APP_PATH}/App/TabView`)) {
@@ -31,13 +29,13 @@ const add = async function (context) {
  * Remove yourself from the project.
  */
 const remove = async function (context) {
-  const { ignite, filesystem, patching } = context
+  const { ignite } = context
 
   // remove the npm module and unlink it
   await ignite.removeModule(ReactNativeTabView)
 
   // remove the component example
-  await ignite.removeComponentExample(EXAMPLE_FILE)
+  await ignite.removePluginComponentExample(EXAMPLE_FILE)
 
   // Example of removing App/TabView folder
   // const removeTabView = await context.prompt.confirm(
