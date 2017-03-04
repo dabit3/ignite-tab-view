@@ -1,8 +1,5 @@
 {
   "name": "ignite-tab-view",
-  "version": "0.0.2",
-  "devEngines": {
-    "node": ">=7.x",
-    "npm": ">=4.x"
-  }
+  "description": "Adds react-native-tab-view support to Ignite.",
+  "version": "0.0.2"
 }
